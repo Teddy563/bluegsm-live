@@ -2,26 +2,15 @@
 import "../styles/global.css";
 import heroImage from "../assets/bluegsm-image.webp";
 import { Image } from "astro:assets";
+import Layout from "../layouts/Layout.astro";
+
+const pageTitle = "Blue GSM - Service GSM Profesional Bucuresti | Reparatii Telefoane";
+const pageDescription =
+  "Service GSM autorizat in Bucuresti (Sector 1, 2, 3, 6). Reparatii telefoane rapide: inlocuire display, baterie, decodari. Experienta din 2015. Cere o oferta acum!";
+const bodyClass = "bg-slate-50 font-body text-slate-900 antialiased selection:bg-[#bfdbfe] selection:text-[#1e3a8a]";
 ---
 
-<html lang="ro">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Blue GSM - Service GSM Profesional Bucuresti | Reparatii Telefoane</title>
-    <meta
-      name="description"
-      content="Service GSM autorizat in Bucuresti (Sector 1, 2, 3, 6). Reparatii telefoane rapide: inlocuire display, baterie, decodari. Experienta din 2015. Cere o oferta acum!"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;700;900&family=Inter:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
-  </head>
-  <body class="bg-slate-50 font-body text-slate-900 antialiased selection:bg-[#bfdbfe] selection:text-[#1e3a8a]">
+<Layout title={pageTitle} description={pageDescription} bodyClass={bodyClass}>
     <header class="fixed inset-x-0 top-0 px-6 z-50 border-b border-slate-200 bg-white/95 backdrop-blur">
       <nav class="mx-auto flex max-w-4xl items-center justify-between gap-4 py-3">
         <a href="#hero" class="flex items-center gap-2">
@@ -70,9 +59,12 @@ import { Image } from "astro:assets";
                 alt="Tehnician reparand un smartphone modern cu unelte de precizie"
                 class="absolute inset-0 block h-full w-full"
                 imgClass="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                width={658}
+                height={658}
                 loading="eager"
                 decoding="async"
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 75vw, 720px"
+                fetchpriority="high"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 75vw, 658px"
               />
               <div class="absolute inset-0 bg-gradient-to-t from-[#172554] via-[#1e3a8a]/70 to-transparent" aria-hidden="true"></div>
               <div class="absolute inset-0 z-10 flex h-full flex-col justify-end p-6">
@@ -428,5 +420,4 @@ import { Image } from "astro:assets";
         </footer>
       </div>
     </main>
-  </body>
-</html>
+  </Layout>
