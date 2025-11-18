@@ -23,6 +23,7 @@ const lucideIcons = [
 
 // https://astro.build/config
 export default defineConfig({
+  inlineStylesheets: 'always',
   integrations: [
     icon({
       include: {
