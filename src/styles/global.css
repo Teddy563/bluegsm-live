@@ -1,11 +1,5 @@
-@import "@fontsource/inter/400.css";
-@import "@fontsource/inter/500.css";
-@import "@fontsource/inter/600.css";
-@import "@fontsource/inter/700.css";
-@import "@fontsource/lexend/400.css";
-@import "@fontsource/lexend/500.css";
-@import "@fontsource/lexend/700.css";
-@import "@fontsource/lexend/900.css";
+@import "@fontsource-variable/inter/wght.css";
+@import "@fontsource-variable/lexend/wght.css";
 @import "tailwindcss";
 
 @layer base {
@@ -27,5 +21,30 @@
 
   .font-body {
     font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+}
+
+@layer utilities {
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+
+  .not-sr-only {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: 0;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
   }
 }
