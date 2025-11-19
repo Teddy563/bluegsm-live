@@ -4,423 +4,347 @@ import heroImage from "../assets/bluegsm-image.webp";
 import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
 import Layout from "../layouts/Layout.astro";
+import TopNav from "../components/TopNav.astro";
 
 const pageTitle = "Blue GSM - Service GSM Profesional Bucuresti | Reparatii Telefoane";
 const pageDescription =
   "Service GSM autorizat in Bucuresti (Sector 1, 2, 3, 6). Reparatii telefoane rapide: inlocuire display, baterie, decodari. Experienta din 2015. Cere o oferta acum!";
-const bodyClass = "bg-white font-body text-slate-900 antialiased selection:bg-[#bfdbfe] selection:text-[#1e3a8a]";
+const bodyClass =
+  "bg-white font-body text-slate-900 antialiased selection:bg-[#bfdbfe] selection:text-[#1e3a8a]";
 ---
 
 <Layout title={pageTitle} description={pageDescription} bodyClass={bodyClass}>
-    <header class="fixed inset-x-0 top-0 px-6 z-50 border-b border-slate-200 bg-white/95 backdrop-blur">
-      <nav class="mx-auto flex max-w-4xl items-center justify-between gap-4 py-3">
-        <a href="#hero" class="flex items-center gap-2">
-          <div class="rounded-xl bg-[#1d4ed8] p-2 ring-1 ring-white/20">
-            <svg
-              viewBox="0 0 28 28"
-              role="img"
-              aria-label="Blue GSM smartphone icon"
-              class="h-7 w-7 text-white"
-              fill="currentColor"
+  <TopNav />
+  <div class="mx-auto w-full max-w-5xl bg-white px-4 py-2 sm:px-6 lg:px-8">
+    <main id="hero" class="grid w-full grid-cols-1 auto-rows-min gap-4 sm:grid-cols-2">
+      <section class="relative col-span-1 h-[460px] rounded-2xl overflow-hidden bg-slate-900 text-white sm:col-span-2 sm:h-[520px] lg:h-[620px]">
+        <div class="absolute inset-0">
+          <Image
+            src={heroImage}
+            alt="Tehnician reparand un smartphone modern cu unelte de precizie"
+            class="absolute inset-0 block h-full w-full object-cover object-center"
+            width={1600}
+            height={900}
+            loading="eager"
+            decoding="async"
+            fetchpriority="high"
+            sizes="(max-width: 640px) 100vw, (max-width: 1200px) 90vw, 1200px"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/80 to-transparent" aria-hidden="true"></div>
+        </div>
+        <div class="relative z-10 flex h-full flex-col justify-end p-6 sm:p-8 lg:p-10">
+          <div class="mb-4 flex flex-wrap gap-2">
+            <span class="inline-flex items-center gap-1 rounded-full bg-[#2563eb] px-3 py-1.5 text-[12px] font-bold uppercase tracking-widest text-white">
+              <Icon name="lucide:badge-check" class="h-4 w-4" aria-hidden="true" />
+              Autorizat
+            </span>
+            <span class="inline-flex items-center rounded-full border border-white/25 bg-white/15 px-3 py-1.5 text-[12px] font-semibold uppercase tracking-widest text-[#e2e8f0]">
+              Din 2015
+            </span>
+          </div>
+          <h1 class="mb-4 max-w-3xl font-heading text-2xl font-black leading-tight sm:text-5xl">
+            Reparatii Telefoane Profesionale
+          </h1>
+          <p class="mb-6 max-w-xl text-lg leading-relaxed text-slate-100 sm:text-2xl">
+            Ecran spart? Baterie slaba? Readucem telefonul tau la viata in aceeasi zi.<span class="hidden sm:inline"> Preturi corecte si garantie extinsa in toate cele 4 locatii.</span>
+          </p>
+          <div class="flex flex-col items-center gap-4 sm:flex-row">
+            <a
+              href="#locations"
+              class="flex w-full sm:w-auto flex-1 items-center justify-center gap-2 rounded-xl bg-white px-8 py-5 text-xl font-bold text-[#1d4ed8] transition hover:bg-[#e2e8f0]"
             >
-              <path
-                d="M19 2H9C6.8 2 5 3.8 5 6V22C5 24.2 6.8 26 9 26H19C21.2 26 23 24.2 23 22V6C23 3.8 21.2 2 19 2M14 24.75C13.17 24.75 12.5 24.08 12.5 23.25C12.5 22.42 13.17 21.75 14 21.75C14.83 21.75 15.5 22.42 15.5 23.25C15.5 24.08 14.83 24.75 14 24.75M19 19H9V6.5H19Z"
-              ></path>
+              <span>Programeaza o vizita</span>
+              <Icon name="lucide:phone" class="h-6 w-6" aria-hidden="true" />
+            </a>
+            <a
+              href="#locations"
+              class="mobile:hidden flex w-full sm:w-auto items-center justify-center rounded-xl bg-white/20 px-6 py-5 text-xl font-bold text-white transition hover:bg-white/30"
+              aria-label="Vezi locatiile"
+            >
+              <Icon name="lucide:map-pin" class="h-6 w-6" aria-hidden="true" />
+              <span class="ml-2">Locatii</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <div class="flex items-center justify-between gap-4 rounded-2xl bg-[#eff6ff] p-5 ring-1 ring-[#dbeafe]">
+        <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-white ring-1 ring-[#dbeafe] text-[#2563eb]">
+          <Icon name="lucide:award" class="h-7 w-7" aria-hidden="true" />
+        </div>
+        <div class="text-right">
+          <p class="font-heading text-4xl font-black tracking-tight text-slate-900">10+</p>
+          <p class="text-sm font-semibold uppercase tracking-[0.18em] text-[#2563eb]">Ani Experienta</p>
+        </div>
+      </div>
+
+      <div class="flex items-center justify-between gap-4 rounded-2xl bg-[#eff6ff] p-5 ring-1 ring-[#dbeafe]">
+        <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-white ring-1 ring-[#dbeafe] text-[#2563eb]">
+          <Icon name="lucide:timer" class="h-7 w-7" aria-hidden="true" />
+        </div>
+        <div class="text-right">
+          <p class="font-heading text-4xl font-black tracking-tight text-slate-900">30m</p>
+          <p class="text-sm font-semibold uppercase tracking-[0.18em] text-[#2563eb]">Timp Mediu</p>
+        </div>
+      </div>
+
+      <article class="col-span-1 rounded-2xl bg-white p-6 ring-1 ring-slate-200 sm:col-span-2">
+        <h2 class="font-heading text-3xl font-bold text-slate-900">De ce Blue GSM?</h2>
+        <p class="mt-3 text-lg leading-relaxed text-slate-600">
+          Suntem o echipa de tehnicieni pasionati care inteleg cat de important este telefonul tau. Folosim echipamente de ultima generatie pentru diagnosticare si reparatie, asigurand integritatea datelor tale.
+        </p>
+        <div class="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
+          <div class="flex items-start gap-3">
+            <Icon name="lucide:shield-check" class="h-7 w-7 text-[#2563eb]" aria-hidden="true" />
+            <div>
+              <p class="font-heading text-xl font-bold text-slate-900">Garantie Extinsa</p>
+              <p class="text-base font-medium text-slate-500">La orice interventie</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <Icon name="lucide:wallet" class="h-7 w-7 text-[#2563eb]" aria-hidden="true" />
+            <div>
+              <p class="font-heading text-xl font-bold text-slate-900">Pret Corect</p>
+              <p class="text-base font-medium text-slate-500">Fara costuri ascunse</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <div class="relative col-span-1 row-span-2 overflow-hidden rounded-2xl bg-slate-900 ring-1 ring-slate-800">
+        <div class="absolute inset-0 bg-slate-950/50"></div>
+        <div class="relative z-10 flex h-full flex-col p-6 text-white">
+          <h3 class="font-heading text-2xl font-bold">Servicii</h3>
+          <ul class="mt-5 space-y-3 text-lg font-medium text-slate-100">
+            <li class="flex items-center gap-2">
+              <Icon name="lucide:smartphone" class="h-5 w-5 text-[#60a5fa]" aria-hidden="true" />
+              Display / LCD
+            </li>
+            <li class="flex items-center gap-2">
+              <Icon name="lucide:battery-charging" class="h-5 w-5 text-[#60a5fa]" aria-hidden="true" />
+              Baterie
+            </li>
+            <li class="flex items-center gap-2">
+              <Icon name="lucide:droplets" class="h-5 w-5 text-[#60a5fa]" aria-hidden="true" />
+              Contact lichid
+            </li>
+            <li class="flex items-center gap-2">
+              <Icon name="lucide:cpu" class="h-5 w-5 text-[#60a5fa]" aria-hidden="true" />
+              Placa de baza
+            </li>
+            <li class="flex items-center gap-2">
+              <Icon name="lucide:mic" class="h-5 w-5 text-[#60a5fa]" aria-hidden="true" />
+              Microfon / Audio
+            </li>
+          </ul>
+          <a href="#locations" class="mt-8 inline-flex items-center justify-center gap-2 rounded-xl bg-[#2563eb] px-5 py-3 text-sm font-bold text-white transition hover:bg-[#1d4ed8]">
+            Vezi locatiile
+            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M9 18l6-6-6-6" />
             </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="flex flex-col justify-between gap-3 rounded-2xl bg-[#eff6ff] p-5 ring-1 ring-[#dbeafe]">
+        <div class="flex gap-1 text-yellow-500">
+          <Icon name="lucide:star" class="h-5 w-5" aria-hidden="true" />
+          <Icon name="lucide:star" class="h-5 w-5" aria-hidden="true" />
+          <Icon name="lucide:star" class="h-5 w-5" aria-hidden="true" />
+          <Icon name="lucide:star" class="h-5 w-5" aria-hidden="true" />
+          <Icon name="lucide:star" class="h-5 w-5" aria-hidden="true" />
+        </div>
+        <p class="text-base italic leading-relaxed text-[#1e3a8a]">
+          "Super servicii! Mi-au schimbat bateria la un iPhone 13 in 20 de minute. Recomand cu incredere."
+        </p>
+        <div class="mt-auto flex items-center gap-2">
+          <div class="flex h-8 w-8 items-center justify-center rounded-full bg-[#bfdbfe] text-xs font-bold text-[#1e40af]">G</div>
+          <p class="text-sm font-semibold text-[#0f172a]">Gabriel P.</p>
+        </div>
+      </div>
+
+      <div class="flex flex-col items-center justify-center gap-2 rounded-2xl bg-slate-900 p-6 text-center text-white ring-1 ring-slate-800">
+        <div class="flex h-12 w-12 items-center justify-center rounded-full bg-[#2563eb]">
+          <Icon name="lucide:phone" class="h-7 w-7 text-white" aria-hidden="true" />
+        </div>
+        <p class="font-heading text-xl font-bold leading-none">Urgent?</p>
+        <p class="text-sm text-slate-300">Suna-ne direct</p>
+        <a class="text-lg font-bold text-[#93c5fd] underline decoration-2 underline-offset-4" href="tel:+40750257775">0750 257 775</a>
+      </div>
+
+      <section id="locations" class="col-span-1 sm:col-span-2">
+        <div class="mb-5 flex items-center justify-between">
+          <div>
+            <h3 class="font-heading text-3xl font-bold text-slate-900">Locatiile Noastre</h3>
+            <p class="text-lg text-slate-500">Alege service-ul cel mai apropiat</p>
+          </div>
+          <span class="rounded-full bg-[#e0ecff] px-4 py-2 text-sm font-black uppercase text-[#1d4ed8]">4 centre</span>
+        </div>
+        <div class="sm:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="rounded-2xl border border-slate-200 p-5 transition hover:border-[#2563eb] hover:bg-[#eff6ff]/60">
+            <div class="flex flex-col gap-4">
+              <div>
+                <div class="mb-1 flex items-center gap-2">
+                  <span class="h-3 w-3 rounded-full bg-green-500"></span>
+                  <h4 class="text-xl font-bold text-slate-900">Sector 1 - Dorobanti</h4>
+                </div>
+                <p class="text-lg font-semibold text-slate-800">Calea Dorobanti 109</p>
+                <p class="text-lg font-semibold text-slate-800">Telefon: 0750 257 775</p>
+                <p class="text-base font-medium text-slate-500">L-V: 10:00 - 19:00</p>
+              </div>
+              <div class="mt-2 flex flex-wrap items-center gap-3">
+                <a
+                  href="tel:+40750257775"
+                  class="inline-flex items-center justify-center gap-2 rounded-full bg-[#2563eb] px-5 py-2.5 text-base font-bold uppercase tracking-wide text-white transition hover:bg-[#1d4ed8]"
+                >
+                  <Icon name="lucide:phone" class="h-5 w-5" aria-hidden="true" />
+                  <span>Suna Acum</span>
+                </a>
+                <a
+                  href="https://maps.app.goo.gl/GyLksvJ5VeeSW91A7"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center justify-center gap-2 rounded-full bg-slate-100 px-5 py-2.5 text-base font-bold uppercase tracking-wide text-slate-700 transition hover:bg-slate-200"
+                  aria-label="Vezi pe harta"
+                >
+                  <Icon name="lucide:map-pin" class="h-5 w-5" aria-hidden="true" />
+                  <span>Harta</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="rounded-2xl border border-slate-200 p-5 transition hover:border-[#2563eb] hover:bg-[#eff6ff]/60">
+            <div class="flex flex-col gap-4">
+              <div>
+                <div class="mb-1 flex items-center gap-2">
+                  <span class="h-3 w-3 rounded-full bg-green-500"></span>
+                  <h4 class="text-xl font-bold text-slate-900">Sector 2 - Ferdinand</h4>
+                </div>
+                <p class="text-lg font-semibold text-slate-800">Bulevardul Ferdinand 103A</p>
+                <p class="text-lg font-semibold text-slate-800">Telefon: 0764 433 105</p>
+                <p class="text-base font-medium text-slate-500">L-V: 10:00 - 19:00 | S-D: 11-17</p>
+              </div>
+              <div class="mt-2 flex flex-wrap items-center gap-3">
+                <a
+                  href="tel:+40764433105"
+                  class="inline-flex items-center justify-center gap-2 rounded-full bg-[#2563eb] px-5 py-2.5 text-base font-bold uppercase tracking-wide text-white transition hover:bg-[#1d4ed8]"
+                >
+                  <Icon name="lucide:phone" class="h-5 w-5" aria-hidden="true" />
+                  <span>Suna Acum</span>
+                </a>
+                <a
+                  href="https://maps.app.goo.gl/Wn2FCUqPAJpwY5sR7"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center justify-center gap-2 rounded-full bg-slate-100 px-5 py-2.5 text-base font-bold uppercase tracking-wide text-slate-700 transition hover:bg-slate-200"
+                  aria-label="Vezi pe harta"
+                >
+                  <Icon name="lucide:map-pin" class="h-5 w-5" aria-hidden="true" />
+                  <span>Harta</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="rounded-2xl border border-slate-200 p-5 transition hover:border-[#2563eb] hover:bg-[#eff6ff]/60">
+            <div class="flex flex-col gap-4">
+              <div>
+                <div class="mb-1 flex items-center gap-2">
+                  <span class="h-3 w-3 rounded-full bg-green-500"></span>
+                  <h4 class="text-xl font-bold text-slate-900">Sector 3 - Traian</h4>
+                </div>
+                <p class="text-lg font-semibold text-slate-800">Strada Traian 70</p>
+                <p class="text-lg font-semibold text-slate-800">Telefon: 0765 900 644</p>
+                <p class="text-base font-medium text-slate-500">L-V: 09:00 - 19:00</p>
+              </div>
+              <div class="mt-2 flex flex-wrap items-center gap-3">
+                <a
+                  href="tel:+40765900644"
+                  class="inline-flex items-center justify-center gap-2 rounded-full bg-[#2563eb] px-5 py-2.5 text-base font-bold uppercase tracking-wide text-white transition hover:bg-[#1d4ed8]"
+                >
+                  <Icon name="lucide:phone" class="h-5 w-5" aria-hidden="true" />
+                  <span>Suna Acum</span>
+                </a>
+                <a
+                  href="https://maps.app.goo.gl/9cMKacA9mEQJt88EA"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center justify-center gap-2 rounded-full bg-slate-100 px-5 py-2.5 text-base font-bold uppercase tracking-wide text-slate-700 transition hover:bg-slate-200"
+                  aria-label="Vezi pe harta"
+                >
+                  <Icon name="lucide:map-pin" class="h-5 w-5" aria-hidden="true" />
+                  <span>Harta</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="rounded-2xl border border-slate-200 p-5 transition hover:border-[#2563eb] hover:bg-[#eff6ff]/60">
+            <div class="flex flex-col gap-4">
+              <div>
+                <div class="mb-1 flex items-center gap-2">
+                  <span class="h-3 w-3 rounded-full bg-green-500"></span>
+                  <h4 class="text-xl font-bold text-slate-900">Sector 6 - Virtutii</h4>
+                </div>
+                <p class="text-lg font-semibold text-slate-800">Soseaua Virtutii 1</p>
+                <p class="text-lg font-semibold text-slate-800">Telefon: 0750 277 370</p>
+                <p class="text-base font-medium text-slate-500">L-V: 10:00 - 19:00</p>
+              </div>
+              <div class="mt-2 flex flex-wrap items-center gap-3">
+                <a
+                  href="tel:+40750277370"
+                  class="inline-flex items-center justify-center gap-2 rounded-full bg-[#2563eb] px-5 py-2.5 text-base font-bold uppercase tracking-wide text-white transition hover:bg-[#1d4ed8]"
+                >
+                  <Icon name="lucide:phone" class="h-5 w-5" aria-hidden="true" />
+                  <span>Suna Acum</span>
+                </a>
+                <a
+                  href="https://maps.app.goo.gl/HzDLuMR94Fq9fSYU8"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center justify-center gap-2 rounded-full bg-slate-100 px-5 py-2.5 text-base font-bold uppercase tracking-wide text-slate-700 transition hover:bg-slate-200"
+                  aria-label="Vezi pe harta"
+                >
+                  <Icon name="lucide:map-pin" class="h-5 w-5" aria-hidden="true" />
+                  <span>Harta</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="faq" class="col-span-1 rounded-2xl bg-white p-7 ring-1 ring-slate-100 sm:col-span-2">
+        <div class="mb-6 flex items-center gap-2">
+          <Icon name="lucide:help-circle" class="h-6 w-6 text-[#2563eb]" aria-hidden="true" />
+          <h3 class="font-heading text-2xl font-bold text-slate-900">Intrebari Frecvente</h3>
+        </div>
+        <div class="space-y-6 text-lg leading-relaxed text-slate-600">
+          <div class="border-b border-slate-100 pb-4">
+            <h4 class="text-lg font-semibold text-slate-900">Cat dureaza o reparatie?</h4>
+            <p>
+              Majoritatea operatiunilor (schimb display, baterie) se realizeaza <strong>pe loc</strong> (30-60 minute) daca piesa este pe stoc. Pentru interventii complexe pe placa de baza, timpul poate varia intre 24-48h.
+            </p>
+          </div>
+          <div class="border-b border-slate-100 pb-4">
+            <h4 class="text-lg font-semibold text-slate-900">Oferiti garantie?</h4>
+            <p>
+              Da! Oferim garantie intre <strong>3 si 12 luni</strong> pentru orice piesa inlocuita si pentru manopera. Bonul fiscal si certificatul de garantie se ofera pe loc.
+            </p>
           </div>
           <div>
-            <p class="font-heading text-base font-black leading-none tracking-tight text-slate-900">BLUE GSM</p>
-            <span class="text-[10px] font-semibold uppercase tracking-wider text-slate-500">Service Profesionist</span>
-          </div>
-        </a>
-        <div class="flex items-center gap-2">
-          <a
-            href="tel:+40750257775"
-            class="hidden rounded-xl border border-slate-200 px-3 py-2 text-xs font-bold text-slate-700 hover:border-[#2563eb] hover:text-[#2563eb] sm:flex"
-          >
-            0750 257 775
-          </a>
-          <a
-            href="tel:+40750257775"
-            class="rounded-xl bg-[#2563eb] px-4 py-2 text-xs font-black uppercase tracking-wide text-white transition-colors hover:bg-[#1d4ed8]"
-          >
-            Cere Oferta
-          </a>
-        </div>
-      </nav>
-    </header>
-
-    <main id="hero" class="flex min-h-screen justify-center pt-16">
-      <div class="relative w-full max-w-xl bg-white px-4 pb-10 pt-6">
-        <div class="grid auto-rows-min grid-cols-2 gap-4">
-          <section class="group relative col-span-2 row-span-2 overflow-hidden rounded-2xl border border-[#e2e8f0]">
-            <div class="relative aspect-square w-full overflow-hidden">
-              <Image
-                src={heroImage}
-                alt="Tehnician reparand un smartphone modern cu unelte de precizie"
-                class="absolute inset-0 block h-full w-full"
-                imgClass="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                width={658}
-                height={658}
-                loading="eager"
-                decoding="async"
-                fetchpriority="high"
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 75vw, 658px"
-              />
-              <div class="absolute inset-0 bg-gradient-to-t from-[#172554] via-[#1e3a8a]/70 to-transparent" aria-hidden="true"></div>
-              <div class="absolute inset-0 z-10 flex h-full flex-col justify-end p-6">
-                <div class="mb-3 flex flex-wrap gap-2">
-                  <span class="inline-flex items-center gap-1 rounded-full bg-[#2563eb] px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-white">
-                    <Icon name="lucide:badge-check" class="h-3.5 w-3.5" aria-hidden="true" />
-                    Autorizat
-                  </span>
-                  <span class="inline-flex items-center rounded-full border border-white/20 bg-white/20 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-[#dbeafe]">
-                    Din 2015
-                  </span>
-                </div>
-                <h1 class="mb-3 font-heading text-3xl font-black leading-tight text-white">Reparatii Telefoane Profesionale</h1>
-                <p class="mb-6 max-w-xs text-sm font-medium leading-relaxed text-[#eff6ff]">
-                  Ecran spart? Baterie slaba? Readucem telefonul tau la viata in aceeasi zi. Preturi corecte si garantie extinsa in toate cele 4 locatii.
-                </p>
-                <div class="flex gap-3">
-                  <a
-                    href="#locations"
-                    class="flex flex-1 items-center justify-center gap-2 rounded-xl bg-white py-3.5 text-center font-bold text-[#1d4ed8] transition-colors hover:bg-[#eff6ff]"
-                  >
-                    <span>Programeaza</span>
-                    <Icon name="lucide:phone" class="h-5 w-5" aria-hidden="true" />
-                  </a>
-                  <a
-                    href="#locations"
-                    class="flex items-center justify-center rounded-xl bg-white/20 px-4 py-3.5 font-bold text-white transition-colors hover:bg-white/30"
-                    aria-label="Vezi locatiile"
-                  >
-                    <Icon name="lucide:map-pin" class="h-5 w-5" aria-hidden="true" />
-                    <span class="sr-only">Vezi locatiile</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <div class="rounded-2xl border border-[#bfdbfe] bg-[#eff6ff] p-5">
-            <div class="flex h-10 w-10 items-center justify-center rounded-full border border-[#bfdbfe] bg-white">
-              <Icon name="lucide:award" class="h-8 w-8 text-[#2563eb]" aria-hidden="true" />
-            </div>
-            <div class="mt-6">
-              <p class="font-heading text-3xl font-black tracking-tighter text-[#0f172a]">10+</p>
-              <p class="mt-1 text-xs font-bold uppercase tracking-wide text-[#1d4ed8]">Ani Experienta</p>
-            </div>
-          </div>
-
-          <div class="rounded-2xl border border-slate-200 bg-white p-5">
-            <div class="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-slate-50">
-              <Icon name="lucide:timer" class="h-8 w-8 text-slate-600" aria-hidden="true" />
-            </div>
-            <div class="mt-6">
-              <p class="font-heading text-2xl font-black tracking-tight text-slate-900">30 Min</p>
-              <p class="mt-1 text-xs font-bold uppercase tracking-wide text-slate-500">Timp Mediu</p>
-            </div>
-          </div>
-
-          <article class="col-span-2 rounded-2xl border border-slate-200 bg-white p-6">
-            <h2 class="mb-3 font-heading text-xl font-bold text-slate-900">De ce Blue GSM?</h2>
-            <p class="mb-4 text-sm leading-relaxed text-slate-600">
-              Suntem o echipa de tehnicieni pasionati care inteleg cat de important este telefonul tau. Folosim echipamente de ultima generatie pentru diagnosticare si reparatie, asigurand integritatea datelor tale.
+            <h4 class="text-lg font-semibold text-slate-900">Se pierd datele din telefon?</h4>
+            <p>
+              In 99% din cazuri (schimb display, baterie, mufa), datele tale raman intacte. Totusi, recomandam intotdeauna un backup preventiv inainte de a veni in service.
             </p>
-            <div class="grid grid-cols-2 gap-3">
-              <div class="flex items-start gap-2">
-                <Icon name="lucide:shield-check" class="mt-0.5 h-5 w-5 text-[#60a5fa]" aria-hidden="true" />
-                <div>
-                  <h3 class="text-sm font-bold text-slate-900">Garantie</h3>
-                  <p class="text-xs text-slate-500">La orice interventie</p>
-                </div>
-              </div>
-              <div class="flex items-start gap-2">
-                <Icon name="lucide:wallet" class="mt-0.5 h-5 w-5 text-[#60a5fa]" aria-hidden="true" />
-                <div>
-                  <h3 class="text-sm font-bold text-slate-900">Pret Corect</h3>
-                  <p class="text-xs text-slate-500">Fara costuri ascunse</p>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <div
-            id="servicii"
-            class="relative col-span-1 row-span-2 overflow-hidden rounded-2xl border border-slate-800 bg-slate-900 p-5"
-          >
-            <div class="relative z-10 flex h-full flex-col">
-              <h3 class="border-b border-white/20 pb-2 font-heading text-xl font-bold text-white">Servicii</h3>
-              <ul class="flex-grow space-y-3 pt-4 text-sm font-medium text-slate-100">
-                <li class="flex items-center gap-2">
-                  <Icon name="lucide:smartphone" class="h-5 w-5 text-[#60a5fa]" aria-hidden="true" />
-                  Display / LCD
-                </li>
-                <li class="flex items-center gap-2">
-                  <Icon name="lucide:battery-charging" class="h-5 w-5 text-[#60a5fa]" aria-hidden="true" />
-                  Baterie
-                </li>
-                <li class="flex items-center gap-2">
-                  <Icon name="lucide:droplets" class="h-5 w-5 text-[#60a5fa]" aria-hidden="true" />
-                  Contact lichid
-                </li>
-                <li class="flex items-center gap-2">
-                  <Icon name="lucide:cpu" class="h-5 w-5 text-[#60a5fa]" aria-hidden="true" />
-                  Placa de baza
-                </li>
-                <li class="flex items-center gap-2">
-                  <Icon name="lucide:mic" class="h-5 w-5 text-[#60a5fa]" aria-hidden="true" />
-                  Microfon / Audio
-                </li>
-              </ul>
-              <a
-                href="#locations"
-                class="mt-4 block w-full rounded-lg bg-[#2563eb] py-3 text-center text-xs font-bold text-white transition-colors hover:bg-[#1d4ed8]"
-              >
-                Vezi locatiile
-              </a>
-            </div>
-          </div>
-
-          <div class="rounded-2xl border border-[#bfdbfe] bg-[#eff6ff] p-5">
-            <div class="flex gap-0.5 text-yellow-500">
-              <Icon name="lucide:star" class="h-5 w-5" aria-hidden="true" />
-              <Icon name="lucide:star" class="h-5 w-5" aria-hidden="true" />
-              <Icon name="lucide:star" class="h-5 w-5" aria-hidden="true" />
-              <Icon name="lucide:star" class="h-5 w-5" aria-hidden="true" />
-              <Icon name="lucide:star" class="h-5 w-5" aria-hidden="true" />
-            </div>
-            <p class="mt-2 text-xs font-medium italic leading-relaxed text-[#1e40af]">
-              "Super servicii! Mi-au schimbat bateria la un iPhone 13 in 20 de minute. Recomand cu incredere."
-            </p>
-            <div class="mt-4 flex items-center gap-2">
-              <div class="flex h-6 w-6 items-center justify-center rounded-full bg-[#bfdbfe] text-[10px] font-bold text-[#1e40af]">G</div>
-              <p class="text-xs font-bold text-[#0f172a]">Gabriel P.</p>
-            </div>
-          </div>
-
-          <div class="flex flex-col items-center justify-center rounded-2xl border border-[#94a3b8] bg-slate-900 p-5 text-center">
-            <div class="mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-[#2563eb] text-white shadow-lg shadow-[#0f172a]/50">
-              <Icon name="lucide:phone" class="h-8 w-8 text-white" aria-hidden="true" />
-            </div>
-            <p class="font-heading text-lg font-bold leading-none text-white">Urgent?</p>
-            <p class="mb-3 mt-2 text-xs text-slate-200">Suna-ne direct</p>
-            <a class="text-sm font-bold text-[#93c5fd] underline decoration-2 underline-offset-2 transition-colors hover:text-white" href="tel:+40750257775">
-              0750 257 775
-            </a>
-          </div>
-
-          <section id="locations" class="col-span-2 rounded-2xl border border-slate-200 bg-white p-6 scroll-mt-32">
-            <div class="mb-5 flex items-center justify-between">
-              <div>
-                <h3 class="font-heading text-2xl font-bold text-slate-900">Locatiile Noastre</h3>
-                <p class="text-xs text-slate-500">Alege service-ul cel mai apropiat</p>
-              </div>
-              <span class="rounded-lg bg-[#dbeafe] px-3 py-1.5 text-xs font-black uppercase text-[#1d4ed8]">4 centre</span>
-            </div>
-            <div class="space-y-3">
-              <div class="group rounded-xl border border-slate-200 p-4 transition-all hover:border-[#2563eb] hover:bg-[#eff6ff]/60">
-                <div class="flex items-start justify-between gap-3">
-                  <div>
-                    <div class="mb-1 flex items-center gap-2">
-                      <span class="h-2 w-2 rounded-full bg-green-500"></span>
-                      <h4 class="text-sm font-bold text-slate-900">Sector 1 - Dorobanti</h4>
-                    </div>
-                    <p class="text-xs text-slate-600">Calea Dorobanti 109</p>
-                    <p class="text-[10px] text-slate-600">L-V: 10:00 - 19:00</p>
-                    <a
-                      class="mt-1 inline-flex items-center gap-1 text-[11px] font-semibold text-[#0f172a] transition hover:text-[#2563eb]"
-                      href="https://www.google.com/maps/dir/44.4537827,26.0428273/Blue+Service+Gsm+Sector+1,+Calea+Dorobanți+109,+București+011703/@44.4516518,26.0333274,13z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x40b20322db269b8f:0x21c3c58334d7ddf0!2m2!1d26.0977784!2d44.4543121?entry=ttu&g_ep=EgoyMDI1MTExMi4wIKXMDSoASAFQAw%3D%3D"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <Icon name="lucide:map-pin" class="h-[14px] w-[14px]" aria-hidden="true" />
-                      Vezi pe harta
-                    </a>
-                  </div>
-                  <div class="flex flex-col items-end gap-1 text-right">
-                    <span class="text-sm font-bold text-[#1d4ed8]">0750 257 775</span>
-                    <a
-                      href="tel:+40750257775"
-                      class="inline-flex items-center justify-center gap-1 rounded-lg bg-[#2563eb] px-3 py-1.5 text-xs font-bold uppercase tracking-wide text-white transition-colors hover:bg-[#1d4ed8]"
-                    >
-                      <Icon name="lucide:phone" class="h-4 w-4" aria-hidden="true" />
-                      Suna
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="group rounded-xl border border-slate-200 p-4 transition-all hover:border-[#2563eb] hover:bg-[#eff6ff]/60">
-                <div class="flex items-start justify-between gap-3">
-                  <div>
-                    <div class="mb-1 flex items-center gap-2">
-                      <span class="h-2 w-2 rounded-full bg-green-500"></span>
-                      <h4 class="text-sm font-bold text-slate-900">Sector 2 - Ferdinand</h4>
-                    </div>
-                    <p class="text-xs text-slate-600">Bulevardul Ferdinand 103A</p>
-                    <p class="text-[10px] text-slate-600">L-V: 10:00 - 19:00 | S-D: 11-17</p>
-                    <a
-                      class="mt-1 inline-flex items-center gap-1 text-[11px] font-semibold text-[#0f172a] transition hover:text-[#2563eb]"
-                      href="https://www.google.com/maps/dir/44.4537827,26.0428273/Blue+Gsm,+Bulevardul+Ferdinand+I+103A,+București+021386/@44.4480201,26.0057389,12z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x40b1f9c1ae263137:0x8990ac7df6d6aba4!2m2!1d26.130936!2d44.4448027?entry=ttu&g_ep=EgoyMDI1MTExMi4wIKXMDSoASAFQAw%3D%3D"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <Icon name="lucide:map-pin" class="h-[14px] w-[14px]" aria-hidden="true" />
-                      Vezi pe harta
-                    </a>
-                  </div>
-                  <div class="flex flex-col items-end gap-1 text-right">
-                    <span class="text-sm font-bold text-[#1d4ed8]">0764 433 105</span>
-                    <a
-                      href="tel:+40764433105"
-                      class="inline-flex items-center justify-center gap-1 rounded-lg bg-[#2563eb] px-3 py-1.5 text-xs font-bold uppercase tracking-wide text-white transition-colors hover:bg-[#1d4ed8]"
-                    >
-                      <Icon name="lucide:phone" class="h-4 w-4" aria-hidden="true" />
-                      Suna
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="group rounded-xl border border-slate-200 p-4 transition-all hover:border-[#2563eb] hover:bg-[#eff6ff]/60">
-                <div class="flex items-start justify-between gap-3">
-                  <div>
-                    <div class="mb-1 flex items-center gap-2">
-                      <span class="h-2 w-2 rounded-full bg-green-500"></span>
-                      <h4 class="text-sm font-bold text-slate-900">Sector 3 - Traian</h4>
-                    </div>
-                    <p class="text-xs text-slate-600">Strada Traian 70</p>
-                    <p class="text-[10px] text-slate-600">L-V: 09:00 - 19:00</p>
-                    <a
-                      class="mt-1 inline-flex items-center gap-1 text-[11px] font-semibold text-[#0f172a] transition hover:text-[#2563eb]"
-                      href="https://www.google.com/maps/dir//Service+Gsm+%7C+Sector+3+Bucuresti,+Strada+Traian+70,+București+030167/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x40b1ffc8f8240261:0x2cae3ec14e54b198?sa=X&ved=1t:57443&ictx=111"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <Icon name="lucide:map-pin" class="h-[14px] w-[14px]" aria-hidden="true" />
-                      Vezi pe harta
-                    </a>
-                  </div>
-                  <div class="flex flex-col items-end gap-1 text-right">
-                    <span class="text-sm font-bold text-[#1d4ed8]">0765 900 644</span>
-                    <a
-                      href="tel:+40765900644"
-                      class="inline-flex items-center justify-center gap-1 rounded-lg bg-[#2563eb] px-3 py-1.5 text-xs font-bold uppercase tracking-wide text-white transition-colors hover:bg-[#1d4ed8]"
-                    >
-                      <Icon name="lucide:phone" class="h-4 w-4" aria-hidden="true" />
-                      Suna
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="group rounded-xl border border-slate-200 p-4 transition-all hover:border-[#2563eb] hover:bg-[#eff6ff]/60">
-                <div class="flex items-start justify-between gap-3">
-                  <div>
-                    <div class="mb-1 flex items-center gap-2">
-                      <span class="h-2 w-2 rounded-full bg-green-500"></span>
-                      <h4 class="text-sm font-bold text-slate-900">Sector 6 - Virtutii</h4>
-                    </div>
-                    <p class="text-xs text-slate-600">Soseaua Virtutii 1</p>
-                    <p class="text-[10px] text-slate-600">L-V: 10:00 - 19:00</p>
-                    <a
-                      class="mt-1 inline-flex items-center gap-1 text-[11px] font-semibold text-[#0f172a] transition hover:text-[#2563eb]"
-                      href="https://www.google.com/maps/dir/44.4537827,26.0428273/Blue+Service+Gsm+Sector+6+%7C+Reparatii+Telefoane+Samsung,+Service+iPhone,+Service+Apple+Sector+6,+Șoseaua+Virtuții+1,+București+060781/@44.4447263,26.0304939,15z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x40b2015903421497:0x427a8dcd032996f8!2m2!1d26.034633!2d44.4356694?entry=ttu&g_ep=EgoyMDI1MTExMi4wIKXMDSoASAFQAw%3D%3D"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <Icon name="lucide:map-pin" class="h-[14px] w-[14px]" aria-hidden="true" />
-                      Vezi pe harta
-                    </a>
-                  </div>
-                  <div class="flex flex-col items-end gap-1 text-right">
-                    <span class="text-sm font-bold text-[#1d4ed8]">0750 277 370</span>
-                    <a
-                      href="tel:+40750277370"
-                      class="inline-flex items-center justify-center gap-1 rounded-lg bg-[#2563eb] px-3 py-1.5 text-xs font-bold uppercase tracking-wide text-white transition-colors hover:bg-[#1d4ed8]"
-                    >
-                      <Icon name="lucide:phone" class="h-4 w-4" aria-hidden="true" />
-                      Suna
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <div id="faq" class="col-span-2 rounded-2xl border border-slate-200 bg-white p-6">
-            <h3 class="mb-5 flex items-center gap-2 font-heading text-lg font-bold text-slate-900">
-              <Icon name="lucide:help-circle" class="h-5 w-5 text-[#2563eb]" aria-hidden="true" />
-              Intrebari Frecvente
-            </h3>
-            <div class="space-y-5">
-              <div class="border-b border-slate-100 pb-4 last:border-0 last:pb-0">
-                <h4 class="mb-1 text-sm font-bold text-slate-900">Cat dureaza o reparatie?</h4>
-                <p class="text-xs leading-relaxed text-slate-500">
-                  Majoritatea operatiunilor (schimb display, baterie) se realizeaza <strong>pe loc</strong> (30-60 minute) daca piesa este pe stoc. Pentru interventii complexe pe placa de baza, timpul poate varia intre 24-48h.
-                </p>
-              </div>
-              <div class="border-b border-slate-100 pb-4 last:border-0 last:pb-0">
-                <h4 class="mb-1 text-sm font-bold text-slate-900">Oferiti garantie?</h4>
-                <p class="text-xs leading-relaxed text-slate-500">
-                  Da! Oferim garantie intre <strong>3 si 12 luni</strong> pentru orice piesa inlocuita si pentru manopera. Bonul fiscal si certificatul de garantie se ofera pe loc.
-                </p>
-              </div>
-              <div class="border-b border-slate-100 pb-4 last:border-0 last:pb-0">
-                <h4 class="mb-1 text-sm font-bold text-slate-900">Se pierd datele din telefon?</h4>
-                <p class="text-xs leading-relaxed text-slate-500">
-                  In 99% din cazuri (schimb display, baterie, mufa), datele tale raman intacte. Totusi, recomandam intotdeauna un backup preventiv inainte de a veni in service.
-                </p>
-              </div>
-            </div>
           </div>
         </div>
-
-        <footer class="mt-12 border-t border-slate-200 pb-8 pt-8 text-center">
-          <div class="mb-6 flex flex-col items-center gap-3">
-            <div class="rounded-2xl bg-[#1d4ed8] p-3 ring-1 ring-white/20">
-              <svg
-                viewBox="0 0 28 28"
-                role="img"
-                aria-label="Blue GSM smartphone icon"
-                class="h-8 w-8 text-white"
-                fill="currentColor"
-              >
-                <path
-                  d="M19 2H9C6.8 2 5 3.8 5 6V22C5 24.2 6.8 26 9 26H19C21.2 26 23 24.2 23 22V6C23 3.8 21.2 2 19 2M14 24.75C13.17 24.75 12.5 24.08 12.5 23.25C12.5 22.42 13.17 21.75 14 21.75C14.83 21.75 15.5 22.42 15.5 23.25C15.5 24.08 14.83 24.75 14 24.75M19 19H9V6.5H19Z"
-                ></path>
-              </svg>
-            </div>
-            <h2 class="font-heading text-lg font-black text-slate-900">BLUE GSM</h2>
-            <p class="mx-auto max-w-xs text-xs leading-relaxed text-slate-500">
-              Service GSM Profesionist in Bucuresti.<br />Reparatii Hardware &amp; Software.
-            </p>
-          </div>
-          <div class="mb-6 flex flex-wrap justify-center gap-6 text-slate-500">
-            <a
-              class="text-xs font-bold uppercase tracking-wider transition-colors hover:text-[#2563eb]"
-              href="https://www.facebook.com/bluegsmservice"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Facebook
-            </a>
-            <a
-              class="text-xs font-bold uppercase tracking-wider transition-colors hover:text-[#2563eb]"
-              href="https://www.instagram.com/bluegsmservice"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Instagram
-            </a>
-          </div>
-          <div class="text-center text-[10px] font-medium text-slate-600">
-            &copy; 2025 Blue GSM. Toate drepturile rezervate.<br />
-            <span class="text-slate-500">Designed by <a href="https://teddybarbu.com">teddy.bar</a></span>
-          </div>
-        </footer>
-      </div>
+      </section>
     </main>
-  </Layout>
+
+    <footer class="mt-10 border-t border-slate-200 py-6 text-center">
+      <p class="text-sm text-slate-600">&copy; 2025 Blue GSM. Toate drepturile rezervate. Designed by <a href="https://teddybarbu.com" class="font-semibold text-[#2563eb] hover:underline">teddy.bar</a></p>
+    </footer>
+  </div>
+</Layout>
